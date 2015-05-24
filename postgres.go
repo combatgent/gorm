@@ -27,14 +27,14 @@ func (postgres) SqlTag(value reflect.Value, size int, autoIncrease bool) string 
 	case reflect.Bool:
 		return "boolean"
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uintptr:
-		if autoIncrease {
-			return "serial"
-		}
+		// if autoIncrease {
+		// 	return "serial"
+		// }
 		return "integer"
 	case reflect.Int64, reflect.Uint64:
-		if autoIncrease {
-			return "bigserial"
-		}
+		// if autoIncrease {
+		// 	return "bigserial"
+		// }
 		return "bigint"
 	case reflect.Float32, reflect.Float64:
 		return "numeric"
