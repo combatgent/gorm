@@ -45,7 +45,7 @@ func (postgres) SqlTag(value reflect.Value, size int, autoIncrease bool) string 
 		return "text"
 	case reflect.Struct:
 		if _, ok := value.Interface().(time.Time); ok {
-			return "timestamp with time zone"
+			return "timestamp"
 		}
 	case reflect.Map:
 		if value.Type() == hstoreType {
